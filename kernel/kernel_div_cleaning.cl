@@ -95,9 +95,13 @@ kernel void calc_laplace_divcleaning(global REAL *d_field, global REAL *d_field_
 // TODO: .xyz or all components?
 kernel void projector_divcleaning(global REAL4 *d_field_b, global REAL *d_field_phi) {
 
-  uint ix = get_global_id(0);
+  /*uint ix = get_global_id(0);
   uint iy = get_global_id(1);
-  uint iz = get_global_id(2);
+  uint iz = get_global_id(2);*/
+
+  uint ix = get_global_id(0) + BNODES;
+  uint iy = get_global_id(1) + BNODES;
+  uint iz = get_global_id(2) + BNODES;
 
   uint idx = calc_idx(ix,iy,iz);
 

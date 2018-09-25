@@ -86,7 +86,9 @@ while (residual_norm2 > tolerance) && (iterations < I_DC('max_iterations'))
 end
 
 %% Project magnetic field
-t = cl_run_kernel(I_Tech('device'), 'projector_divcleaning', g_range_projection, I_DC('l_range'), ...
+%t = cl_run_kernel(I_Tech('device'), 'projector_divcleaning', g_range_projection, I_DC('l_range'), ...
+%                  field_b, field_phi, 0);
+t = cl_run_kernel(I_Tech('device'), 'projector_divcleaning', I_DC('g_range'), I_DC('l_range'), ...
                   field_b, field_phi, 0);
 kernel_runtime = kernel_runtime + t;
 
