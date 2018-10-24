@@ -11,4 +11,4 @@ matlab/*/*.m~
 examples/*.m~
 
 # temporary files for jupyter/ipython notebooks
-docs/.ipynb_checkpoints/
+*/.ipynb_checkpoints/
